@@ -85,11 +85,11 @@ def all_game():
                 flag = True
                 if game_logic.snake_real[i].x <= -0.9:
                     game_logic.command = "LEFT"
-                elif game_logic.snake_real[i].x >= columns:
+                elif game_logic.snake_real[i].x >= columns - 0.1:
                     game_logic.command = "RIGHT"
                 elif game_logic.snake_real[i].y <= game_func.score_board_game -0.9:
                     game_logic.command = 'UP'
-                elif game_logic.snake_real[i].y >= rows + game_func.score_board_game:
+                elif game_logic.snake_real[i].y >= rows + game_func.score_board_game - 0.1:
                     game_logic.command = 'DOWN'
                 else:
                     flag = False
