@@ -1,9 +1,9 @@
 import pygame
+from fsutils import resource_path
 from window import window 
 import time 
 from game_palette import palette_1
-import random 
-from os import path
+import random
 pygame.init()
 pygame.mixer.init()
 from button_cl import Button 
@@ -18,7 +18,7 @@ from theme_menu import ThemeMenu
 
 
 def play_music():
-    pygame.mixer.music.load("sounds/game_over.mp3")
+    pygame.mixer.music.load(resource_path("game_over.mp3"))
     pygame.mixer.music.play(loops = 0)
 
 def game_over():
@@ -86,10 +86,10 @@ def game_over():
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if again_btn.check_for_mousebutton(mouse_pos):
-                    pygame.mixer.Sound("sounds/had_choise.mp3").play(loops=0)
+                    pygame.mixer.Sound(resource_path("had_choise.mp3")).play(loops=0)
                     return "again"
                 elif exit_btn.check_for_mousebutton(mouse_pos):
-                    pygame.mixer.Sound("sounds/had_choise.mp3").play(loops=0)
+                    pygame.mixer.Sound(resource_path("had_choise.mp3")).play(loops=0)
                     return "exit"
         
         pygame.display.flip()

@@ -2,6 +2,7 @@ import pygame
 from pygame import Vector2
 from typing import List, Tuple
 from game_palette import palette_1
+from fsutils import resource_path
 
 def within_range(val: int, min: int, max: int):
     return val > min and val < max
@@ -64,7 +65,8 @@ class Button():
         screen.blit(self.button_surface, self.button_rect)
         screen.blit(self.button_text, self.button_rect)
         if self.flag and self.first_move == True:
-            pygame.mixer.Sound("sounds/variant.mp3").play(loops=0)
+
+            pygame.mixer.Sound(resource_path("variant.mp3")).play(loops=0)
 
             self.first_move = False
 

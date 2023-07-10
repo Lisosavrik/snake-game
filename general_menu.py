@@ -1,4 +1,5 @@
 import pygame, sys
+from fsutils import resource_path
 from window import window
 from game_palette import palette_1
 from button_cl import Button 
@@ -69,13 +70,13 @@ def general_menu():
         
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if play_btn.check_for_mousebutton(mouse_pos):
-                    pygame.mixer.Sound("sounds/had_choise.mp3").play(loops=0)
+                    pygame.mixer.Sound(resource_path("had_choise.mp3")).play(loops=0)
                     return "play"
                 elif levels_btn.check_for_mousebutton(mouse_pos):
-                    pygame.mixer.Sound("had_choise.mp3").play(loops=0)
+                    pygame.mixer.Sound(resource_path("had_choise.mp3")).play(loops=0)
                     levels()
                 elif quit_btn.check_for_mousebutton(mouse_pos):
-                    pygame.mixer.Sound("had_choise.mp3").play(loops=0)
+                    pygame.mixer.Sound(resource_path("had_choise.mp3")).play(loops=0)
                     return "exit"
     
         pygame.display.flip()

@@ -1,11 +1,11 @@
 import pygame
 
 from game_palette import palette_1
-from os import path
 from pygame import Vector2
 
 pygame.init()
 
+from fsutils import resource_path
 
 
 class ThemeMenu:
@@ -16,7 +16,7 @@ class ThemeMenu:
             buttons: dict,
             scale_widget: float = 0.1,
             scale_title: float = 0.1,
-            font_file: str = "fonts/8bit.ttf", 
+            font_file: str = "8bit.ttf", 
             scale_offset_title: float = 0.05,
             pos_title: str ="TOPLEFT"
 
@@ -52,11 +52,11 @@ class ThemeMenu:
 
     def set_title_font(self):
         self.set_title_font_size()
-        self.title_font = pygame.font.Font(path.join(path.dirname(__file__), self.font_file), self.title_font_size)
+        self.title_font = pygame.font.Font(resource_path(self.font_file), self.title_font_size)
 
     def set_widget_font(self):
         self.set_widget_font_size()
-        self.widget_font = pygame.font.Font(path.join(path.dirname(__file__), self.font_file), self.widget_font_size)
+        self.widget_font = pygame.font.Font(resource_path(self.font_file), self.widget_font_size)
 
 
 

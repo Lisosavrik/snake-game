@@ -1,5 +1,6 @@
 import pygame 
 from pygame import Vector2
+from fsutils import resource_path
 from window import window
 from game_func import GameFunc
 from game_logic import GameLogic
@@ -33,7 +34,7 @@ def all_game():
     draw_loading()
 
     delta_time = 0 
-    music = pygame.mixer.Sound("sounds/mozart.mp3")
+    music = pygame.mixer.Sound(resource_path("mozart.mp3"))
     def start_music():
         music.play()
 
@@ -42,7 +43,7 @@ def all_game():
     rows = int(window.size[1] / GameFunc.square_size - GameFunc.score_board / GameFunc.square_size)
     score_board_game = GameFunc.score_board_game
 
-    game_logic = GameLogic(columns=columns, rows=rows, goal=20, score_board_game=score_board_game)
+    game_logic = GameLogic(columns=columns, rows=rows, goal=21, score_board_game=score_board_game)
     game_func = GameFunc(game_logic, columns, rows)
 
     game_logic.add_blocks(Vector2(8, 8))
@@ -71,7 +72,7 @@ def all_game():
             game_logic.move()
             if game_logic.snake_game[-1] == game_logic.food_location:
                 game_logic.eat_food()
-                pygame.mixer.Sound("sounds/had_choise.mp3").play(loops=0)
+                pygame.mixer.Sound(resource_path("had_choise.mp3")).play(loops=0)
             else:
                 game_logic.snake_game.pop(0)
             if game_logic.score[0] == game_logic.score[1]:

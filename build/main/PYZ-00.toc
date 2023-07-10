@@ -159,6 +159,7 @@
   ('fractions',
    '/Users/mac/.pyenv/versions/3.11.3/lib/python3.11/fractions.py',
    'PYMODULE'),
+  ('fsutils', '/Users/mac/Desktop/хуйня/dev/vermifuge/fsutils.py', 'PYMODULE'),
   ('ftplib',
    '/Users/mac/.pyenv/versions/3.11.3/lib/python3.11/ftplib.py',
    'PYMODULE'),

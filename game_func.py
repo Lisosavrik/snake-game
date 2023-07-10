@@ -5,7 +5,8 @@ from pygame import Surface, Vector2
 from game_logic import GameLogic
 from typing import List
 from game_values import game_values
-from os import path 
+from fsutils import resource_path
+
 import random
 import time
 
@@ -60,7 +61,7 @@ class GameFunc:
         pygame.draw.rect(window.screen, palette_1.background_color_3, [0, 0,  window.size[0], self.score_board])
 
     def draw_score_text(self):
-        font = pygame.font.Font(path.join(path.dirname(__file__), "fonts/8bit.ttf"), self.text_size)
+        font = pygame.font.Font(resource_path("8bit.ttf"), self.text_size)
 
         score = self.game_logic.score
         
